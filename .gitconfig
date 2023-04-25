@@ -1,0 +1,39 @@
+[diff "astextplain"]
+	textconv = astextplain
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = manager
+[core]
+	autocrlf = input
+	eol = lf
+	editor = nvim
+	excludesfile = ~/.gitignore
+[alias]
+	stash-all = stash save --include-untracked
+	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	stat = status -u --porcelain
+	logdiff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	resetauthordate = "filter-branch --env-filter 'GIT_COMMITTER_DATE=$GIT_AUTHOR_DATE; export GIT_COMMITTER_DATE'"
+	resign = "filter-branch --commit-filter 'git commit-tree -S '$@';'"
+	merge-commit = "merge --no-ff --edit"
+	reset-date = "!f() { FILTER_BRANCH_SQUELCH_WARNING=1 git resetauthordate -f "$@" && FILTER_BRANCH_SQUELCH_WARNING=1 git resign -f "$@"; }; f"
+[user]
+	name = Benjamin Chiang
+	email = chiangbenjamin991@gmail.com
+	signingkey = D5D92F3A206E0FD2
+[commit]
+	gpgsign = true
+[push]
+	default = current
+[pull]
+  default = current
+[gpg]
+	program = gpg
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
