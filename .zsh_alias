@@ -1,6 +1,7 @@
 alias update-packages="sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove -y"
 alias git-prune="git branch --merged | grep -vE \"^(\* )?(main|dev|master)$\" | xargs git branch -d; git remote prune origin"
 alias docker-prune="(docker image prune -f & docker volume prune -f) && docker builder prune -f"
+alias docker-images="docker images --format \"{{.Size}}\t>  {{.Repository}}:{{.Tag}}\" | sort -hr"
 alias npni="npx --no-install"
 alias k="kubectl"
 alias code="code"
@@ -8,3 +9,6 @@ alias dockertags="docker run -it --rm goodwithtech/dockertags"
 alias commit="npm run commit"
 alias lss="ls -lavh --group-directories-first -I . -I .."
 
+docker_history() {
+  docker history "$1" --no-trunc --format "{{.Size}}\t>  {{.CreatedBy}}" | sort -hr
+}
