@@ -6,4 +6,5 @@ alias k="kubectl"
 alias code="code"
 alias dockertags="docker run -it --rm goodwithtech/dockertags"
 alias commit="npm run commit"
+alias lss="ls -lavh --group-directories-first -I . -I .."
 
