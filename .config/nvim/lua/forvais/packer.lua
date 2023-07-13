@@ -29,9 +29,6 @@ return require('packer').startup(function (use)
   use({
     'tomasiser/vim-code-dark',
     as = 'codedark',
-    config = function ()
-      vim.cmd('colorscheme codedark')
-    end
   })
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
