@@ -36,6 +36,18 @@ return require('packer').startup(function (use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  use({
+    "aaronhallaert/advanced-git-search.nvim",
+    config = function()
+        require("telescope").load_extension("advanced_git_search")
+    end,
+    requires = {
+      "nvim-telescope/telescope.nvim",
+      "tpope/vim-fugitive",
+      "tpope/vim-rhubarb",
+    },
+  })
+
   use ('christoomey/vim-tmux-navigator')
   use ('tpope/vim-obsession')
 
@@ -47,7 +59,7 @@ return require('packer').startup(function (use)
   use ('theprimeagen/harpoon')
   use ('theprimeagen/vim-be-good')
   use ('mbbill/undotree')
-  -- use ('tpope/vim-fugitive')
+
   use {
     'VonHeikemen/lsp-zero.nvim',
     requires = {

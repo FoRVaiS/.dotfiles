@@ -10,6 +10,9 @@ vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
 
+-- Extensions
+vim.keymap.set('n', '<leader>tlsags', ':AdvancedGitSearch<CR>', { noremap = true, silent = true })
+
 local telescope = require('telescope')
 
 telescope.setup {
