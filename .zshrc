@@ -103,44 +103,35 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-if [ "$VSCODE_TEMP_SHELL" != "true" ]
-then
-  export GPG_TTY=$(tty)
+export GPG_TTY=$(tty)
 
-  export PATH="$PATH:$HOME/.local/bin:$HOME/.krew/bin"
-  export PAGER=cat
-  export EDITOR=nvim
+export PATH="$PATH:$HOME/.local/bin:$HOME/.krew/bin"
+export PAGER=cat
+export EDITOR=nvim
 
-  export XDG_CONFIG_HOME="$HOME/.config"
-  export PROJECTS=$HOME/projects
-  export IOTO=$PROJECTS/_IOTO/
+export XDG_CONFIG_HOME="$HOME/.config"
+export PROJECTS=$HOME/projects
+export IOTO=$PROJECTS/_IOTO/
 
-  source ~/.zsh_alias
+source ~/.zsh_alias
 
-  # Load Kubectl completion
-  source ~/.zsh_kubectl
+# Load Kubectl completion
+source ~/.zsh_kubectl
 
-  # Load NVM
-  export NVM_DIR="$HOME/.nvm"
+# Load NVM
+export NVM_DIR="$HOME/.nvm"
 
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm   
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 
-  alias node='unalias node ; unalias npm ; nvm use default ; node $@'
-  alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
+alias node='unalias node ; unalias npm ; nvm use default ; node $@'
+alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
-  # Start ssh-agent
-  eval `ssh-agent`
+# Start ssh-agent
+eval `ssh-agent`
 
-  # Run these commands if not in a VSC integrated terminal
-  if [ "$VSCODE_INTEGRATED_TERM" != "true" ]
-  then
-    cd $WINHOME
-  fi
-
-  # Load Kubectl
-  export KUBECONFIG=$HOME/.kube/config
-fi
+# Load Kubectl
+export KUBECONFIG=$HOME/.kube/config
 
 # SESSION="vscode:::`pwd|sed "s#$CODE_DIR/##"|sed "s#$HOME/##"|sed "s#$HOME#~#"|sed "s#\.##"`"
 # tmux attach-session -t $SESSION || tmux new-session -s $SESSION
