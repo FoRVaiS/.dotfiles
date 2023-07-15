@@ -128,7 +128,7 @@ alias node='unalias node ; unalias npm ; nvm use default ; node $@'
 alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
 # Start ssh-agent
-eval `ssh-agent`
+source ~/.ssh-agent
 
 # Load Kubectl
 export KUBECONFIG=$HOME/.kube/config
