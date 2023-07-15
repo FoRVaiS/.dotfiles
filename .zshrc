@@ -76,7 +76,6 @@ HIST_STAMPS="mm/dd/yyyy"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=()
 
-echo "[zsh] Loading oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -119,23 +118,18 @@ then
   source ~/.zsh_alias
 
   # Load Kubectl completion
-  echo "[zsh] Loading kubectl auto-complete."
   source ~/.zsh_kubectl
 
   # Load NVM
   export NVM_DIR="$HOME/.nvm"
 
-  echo "[zsh] Loading NVM bash completion."
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-  echo "[zsh] Loading NVM."
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm   
 
   alias node='unalias node ; unalias npm ; nvm use default ; node $@'
   alias npm='unalias node ; unalias npm ; nvm use default ; npm $@'
 
   # Start ssh-agent
-  echo "[zsh] Initializing ssh-agent."
   eval `ssh-agent`
 
   # Run these commands if not in a VSC integrated terminal
@@ -150,5 +144,3 @@ fi
 
 # SESSION="vscode:::`pwd|sed "s#$CODE_DIR/##"|sed "s#$HOME/##"|sed "s#$HOME#~#"|sed "s#\.##"`"
 # tmux attach-session -t $SESSION || tmux new-session -s $SESSION
-
-clear
