@@ -24,6 +24,13 @@ set.colorcolumn = "120"
 vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 100
 
+-- Strip trailing whitespaces
+vim.api.nvim_exec([[
+  autocmd BufWritePre * :%s/\s\+$//e
+]], false)
+
+vim.opt.eol = true
+
 -- It almost does what I want... except that it changes the working directory everytime I open a new file, even while in nvim.
 -- I need a solution to that update the working directory whenever an nvim instance is launched.
 -- set.autochdir = true
