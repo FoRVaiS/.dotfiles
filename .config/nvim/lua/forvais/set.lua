@@ -21,7 +21,8 @@ set.incsearch = true
 
 set.colorcolumn = "120"
 
-vim.opt.signcolumn = 'no'
+vim.opt.signcolumn = 'yes'
+vim.opt.updatetime = 100
 
 -- It almost does what I want... except that it changes the working directory everytime I open a new file, even while in nvim.
 -- I need a solution to that update the working directory whenever an nvim instance is launched.
