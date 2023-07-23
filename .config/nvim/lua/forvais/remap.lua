@@ -24,3 +24,4 @@ vim.keymap.set("n", "<C-z>", "<Esc>")
 -- Remap keybinds for commenting with vim commentary
 vim.keymap.set("v", "/", "<Plug>Commentary")
 
+vim.cmd[[imap <silent><script><expr> <C-a> copilot#Accept("\<CR>")]]

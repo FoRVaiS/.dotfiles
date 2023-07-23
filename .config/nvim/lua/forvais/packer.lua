@@ -86,6 +86,7 @@ return require('packer').startup(function (use)
 
   use { 'airblade/vim-gitgutter' }
   use { 'jiangmiao/auto-pairs' }
+  use { 'github/copilot.vim' }
 
   -- Put this at the end after all plugins
   if packer_bootstrap then
