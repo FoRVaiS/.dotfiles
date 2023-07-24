@@ -36,20 +36,9 @@ return require('packer').startup(function (use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use({
-    "aaronhallaert/advanced-git-search.nvim",
-    config = function()
-        require("telescope").load_extension("advanced_git_search")
-    end,
-    requires = {
-      "nvim-telescope/telescope.nvim",
-      "tpope/vim-fugitive",
-      "tpope/vim-rhubarb",
-    },
-  })
-
   use ('christoomey/vim-tmux-navigator')
   use ('tpope/vim-obsession')
+  use ('tpope/vim-fugitive')
 
   use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use ('nvim-treesitter/nvim-treesitter-refactor')
