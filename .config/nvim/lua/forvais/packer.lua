@@ -73,7 +73,7 @@ return require('packer').startup(function (use)
     }
   }
 
-  use { 'airblade/vim-gitgutter' }
+  use { 'lewis6991/gitsigns.nvim' }
   use { 'jiangmiao/auto-pairs' }
   use { 'github/copilot.vim' }
 
