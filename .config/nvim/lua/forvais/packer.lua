@@ -24,32 +24,39 @@ if not status then
 end
 
 return require('packer').startup(function (use)
+  -- Plugin management
   use 'wbthomason/packer.nvim'
 
+  -- Appearance
   use({
     'tomasiser/vim-code-dark',
     as = 'codedark',
   })
-  use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.2',
-    -- or                            , branch = '0.1.x',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
 
-  use ('christoomey/vim-tmux-navigator')
-  use ('tpope/vim-obsession')
-  use ('tpope/vim-fugitive')
+  -- Navigation and Searching
+  use({
+    'nvim-telescope/telescope.nvim',
+    requires = {
+      {'nvim-lua/plenary.nvim'}
+    }
+  })
+  use('christoomey/vim-tmux-navigator')
+  use('theprimeagen/harpoon')
 
-  use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-  use ('nvim-treesitter/nvim-treesitter-refactor')
-  use ('joosepalviste/nvim-ts-context-commentstring')
-  use ('tpope/vim-commentary')
+  -- Session and State Management
+  use('tpope/vim-obsession')
+  use('mbbill/undotree')
 
-  use ('theprimeagen/harpoon')
-  use ('theprimeagen/vim-be-good')
-  use ('mbbill/undotree')
+  -- Git Integration
+  use('tpope/vim-fugitive')
+  use('lewis6991/gitsigns.nvim')
 
-  use {
+  -- Language Support and Editing
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
+  use('nvim-treesitter/nvim-treesitter-refactor')
+  use('joosepalviste/nvim-ts-context-commentstring')
+  use('tpope/vim-commentary')
+  use({
     'VonHeikemen/lsp-zero.nvim',
     requires = {
       -- LSP Support
@@ -71,15 +78,17 @@ return require('packer').startup(function (use)
       {'L3MON4D3/LuaSnip'},
       {'rafamadriz/friendly-snippets'},
     }
-  }
+  })
+  use('jiangmiao/auto-pairs')
 
-  use { 'lewis6991/gitsigns.nvim' }
-  use { 'jiangmiao/auto-pairs' }
-  use { 'github/copilot.vim' }
+  -- AI Assistance
+  use('github/copilot.vim')
+
+  -- Game
+  use('theprimeagen/vim-be-good')
 
   -- Put this at the end after all plugins
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
-
