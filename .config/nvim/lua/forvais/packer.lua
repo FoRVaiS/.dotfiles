@@ -84,9 +84,6 @@ return require('packer').startup(function (use)
   -- AI Assistance
   use('github/copilot.vim')
 
-  -- Game
-  use('theprimeagen/vim-be-good')
-
   -- Put this at the end after all plugins
   if packer_bootstrap then
     require('packer').sync()
