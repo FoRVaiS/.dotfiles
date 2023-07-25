@@ -36,6 +36,7 @@ return require('packer').startup(function(use)
   -- Navigation and Searching
   use({
     'nvim-telescope/telescope.nvim',
+    tag = '0.1.2',
     requires = {
       { 'nvim-lua/plenary.nvim' }
     }
