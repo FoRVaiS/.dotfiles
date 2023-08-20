@@ -24,4 +24,7 @@ vim.keymap.set("n", "<C-z>", "<Esc>")
 -- Remap keybinds for commenting with vim commentary
 vim.keymap.set("v", "/", "<Plug>Commentary")
 
+-- Bind <leader>gfd to :Gvdiff
+vim.keymap.set("n", "<leader>gfd", ":Gvdiff<CR>")
+
 vim.cmd[[imap <silent><script><expr> <C-a> copilot#Accept("\<CR>")]]
