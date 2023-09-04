@@ -54,7 +54,6 @@ return require('packer').startup(function(use)
 
   -- Language Support and Editing
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-  use('nvim-treesitter/nvim-treesitter-refactor')
   use('joosepalviste/nvim-ts-context-commentstring')
   use('tpope/vim-commentary')
   use({
