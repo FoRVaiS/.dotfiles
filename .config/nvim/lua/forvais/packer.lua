@@ -80,7 +80,10 @@ return require('packer').startup(function(use)
       { 'rafamadriz/friendly-snippets' },
     }
   })
-  use('jiangmiao/auto-pairs')
+  use({
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  })
 
   -- AI Assistance
   use('github/copilot.vim')
