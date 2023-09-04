@@ -52,6 +52,21 @@ return require('packer').startup(function(use)
   use('tpope/vim-fugitive')
   use('lewis6991/gitsigns.nvim')
 
+  -- Debugger
+  use('mfussenegger/nvim-dap')
+  use({
+    'rcarriga/nvim-dap-ui',
+    requires = {
+      { 'mfussenegger/nvim-dap' }
+    }
+  })
+  use({
+    'theHamsta/nvim-dap-virtual-text',
+    config = function ()
+      require('nvim-dap-virtual-text').setup()
+    end
+  })
+
   -- Language Support and Editing
   use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
   use('joosepalviste/nvim-ts-context-commentstring')
