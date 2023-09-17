@@ -27,3 +27,37 @@ for _, language in ipairs { "typescript", "javascript" } do
     },
   }
 end
+
+dap.adapters.python = {
+  type = 'executable',
+  command = 'python3',
+  args = {'-m', 'debugpy.adapter'},
+}
+
+dap.configurations.python = {
+  {
+    type = 'python',
+    request = 'launch',
+    name = "Debug Current File",
+    program = "${file}",
+    pythonPath = "/path/to/your/venv/bin/python3",
+    args = function()
+      local arguments = vim.fn.input("Arguments: ")
+      return vim.split(arguments, " ")
+    end
+  },
+  {
+    type = 'python',
+    request = 'launch',
+    name = "Debug Current File in venv",
+    program = "${file}",
+    pythonPath = function()
+      local venv_path = vim.fn.input("Path to venv: ")
+      return venv_path.."/bin/python3"
+    end,
+    args = function()
+      local arguments = vim.fn.input("Arguments: ")
+      return vim.split(arguments, " ")
+    end
+  }
+}
