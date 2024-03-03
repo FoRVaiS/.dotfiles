@@ -61,12 +61,6 @@ require'nvim-treesitter.configs'.setup {
         goto_previous_usage = "<a-#>",
       },
     },
-    smart_rename = {
-      enable = true,
-      keymaps = {
-        smart_rename = "grr",
-      },
-    },
   },
 
   context_commentstring = {
