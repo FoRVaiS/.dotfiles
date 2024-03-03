@@ -33,6 +33,8 @@ vim.opt.eol = true
 
 vim.g.copilot_no_tab_map = true
 
+vim.o.equalalways = false
+
 -- It almost does what I want... except that it changes the working directory everytime I open a new file, even while in nvim.
 -- I need a solution to that update the working directory whenever an nvim instance is launched.
 -- set.autochdir = true
