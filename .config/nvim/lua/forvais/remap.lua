@@ -27,4 +27,7 @@ vim.keymap.set("v", "/", "<Plug>Commentary")
 -- Bind <leader>gfd to :Gvdiff
 vim.keymap.set("n", "<leader>gfd", ":Gvdiff<CR>")
 
+vim.keymap.set("n", "<C-w>v", "<C-w>v")
+vim.keymap.set("n", "<C-w>h", "<C-w>s")
+
 vim.cmd[[imap <silent><script><expr> <C-a> copilot#Accept("\<CR>")]]
