@@ -111,7 +111,6 @@ export EDITOR=nvim
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export PROJECTS=$HOME/projects
-export IOTO=$PROJECTS/_IOTO/
 
 source ~/.zsh_alias
 
