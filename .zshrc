@@ -129,3 +129,5 @@ source ~/.ssh-agent
 # Load Kubectl
 export KUBECONFIG=$HOME/.kube/config
 
+# Load local shell profiles
+[ -f "$HOME/.zsh_profile" ] && source ~/.zsh_profile
