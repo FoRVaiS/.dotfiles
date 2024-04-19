@@ -129,5 +129,3 @@ source ~/.ssh-agent
 # Load Kubectl
 export KUBECONFIG=$HOME/.kube/config
 
-# SESSION="vscode:::`pwd|sed "s#$CODE_DIR/##"|sed "s#$HOME/##"|sed "s#$HOME#~#"|sed "s#\.##"`"
-# tmux attach-session -t $SESSION || tmux new-session -s $SESSION
