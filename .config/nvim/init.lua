@@ -407,6 +407,12 @@ require('lazy').setup {
             },
           },
         },
+        defaults = {
+          file_ignore_patterns = {
+            'node_modules',
+            'venv',
+          },
+        },
       }
 
       -- Enable telescope extensions, if they are installed
