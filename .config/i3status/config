@@ -12,6 +12,7 @@ general {
         separator = ""
 }
 
+order += "volume master"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 # order += "load"
@@ -55,4 +56,12 @@ memory {
 
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
 }
