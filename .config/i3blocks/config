@@ -1,0 +1,81 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=$SCRIPT_DIR/$BLOCK_NAME/$BLOCK_NAME
+separator_block_width=30
+markup=none
+
+[volume]
+label=VOL
+interval=once
+signal=10
+separator=false
+
+[battery-poly]
+interval=5
+label=BAT
+
+
+[cpu_util_detailed]
+label=CPU
+markup=pango
+interval=-2
+separator=false
+
+[temperature]
+interval=2
+
+
+[memory]
+label=MEM
+separator=true
+interval=5
+
+
+[disk]
+label=FREE
+interval=30
+separator=false
+
+[disk-io]
+command=WIDTH=2 MB_ONLY=1 MB_PRECISION=2 $SCRIPT_DIR/disk-io/disk-io
+interval=persist
+markup=pango
+label=DISK
+separator=false
+instance=/^nvme/
+
+[bandwidth2]
+command=$SCRIPT_DIR/bandwidth2/bandwidth2
+interval=persist
+markup=pango
+label=NET
+
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=5
