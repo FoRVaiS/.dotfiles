@@ -28,12 +28,12 @@
 command=$SCRIPT_DIR/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=30
 markup=none
+separator=false
 
 [volume]
 label=VOL
 interval=once
 signal=10
-separator=false
 
 [battery-poly]
 interval=5
@@ -44,7 +44,6 @@ label=BAT
 label=CPU
 markup=pango
 interval=-2
-separator=false
 
 [temperature]
 interval=2
@@ -52,21 +51,18 @@ interval=2
 
 [memory]
 label=MEM
-separator=true
 interval=5
 
 
 [disk]
 label=FREE
 interval=30
-separator=false
 
 [disk-io]
 command=WIDTH=2 MB_ONLY=1 MB_PRECISION=2 $SCRIPT_DIR/disk-io/disk-io
 interval=persist
 markup=pango
 label=DISK
-separator=false
 instance=/^nvme/
 
 [bandwidth2]
